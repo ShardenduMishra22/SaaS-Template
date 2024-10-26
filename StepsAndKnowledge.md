@@ -2,7 +2,7 @@
 
 Instead of using `npx prisma migrate dev --name init` to apply and track database schema changes, `prisma db push` can also be used to sync the schema. However, `prisma migrate` is generally preferred because it automatically creates migration files that maintain a version history of changes, allowing for easier rollbacks and better collaboration on schema modifications.
 
---
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Phases of Development
 
