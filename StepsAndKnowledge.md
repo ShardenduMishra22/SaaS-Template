@@ -40,3 +40,4 @@ Using Neon.tech as a serverless PostgreSQL database, we’ll use Prisma to visua
       ```bash
       npx prisma format
       ```
+
