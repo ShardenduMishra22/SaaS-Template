@@ -1,22 +1,24 @@
-/* This code os standard copy paste not much to learn here : Check StepsAndKnowledge.md for more knowledge */ 
-/* This is done on NextJS because it is based on an Edge Time Run enviorment */
+/* This code is standard copy-paste; refer to StepsAndKnowledge.md for more details. */
+/* This is done in Next.js, which operates in an Edge Runtime environment. */
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { PrismaClient } from "@prisma/client";
 
-// in case the prismaClient is already created, we will return the same instance
-const prismaClientSingelton = () => {
+// Singleton function to return the same instance of PrismaClient
+const prismaClientSingleton = () => {
     return new PrismaClient();
 }
 
-// we are expecting the return type of prismaClientSingelton to be PrismaClient (this is a TypeScript feature)
-type prismaClientSingelton = ReturnType<typeof prismaClientSingelton>;
+// Type definition for PrismaClient instance
+type prismaClientSingleton = ReturnType<typeof prismaClientSingleton>;
 
+// Global variable to store the PrismaClient instance
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
-const prisma = globalForPrisma.prisma || prismaClientSingelton();
+const prisma = globalForPrisma.prisma || prismaClientSingleton();
 
 export default prisma;
 
+// Ensures a single instance of PrismaClient in non-production environments
 if (process.env.NODE_ENV !== "production") {
     globalForPrisma.prisma = prisma;
 }
