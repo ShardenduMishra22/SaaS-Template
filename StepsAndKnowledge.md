@@ -2,7 +2,7 @@
 
 Instead of using `npx prisma migrate dev --name init` to apply and track database schema changes, `prisma db push` can also be used to sync the schema. However, `prisma migrate` is generally preferred because it automatically creates migration files that maintain a version history of changes, allowing for easier rollbacks and better collaboration on schema modifications.
 
---
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Phases of Development
 
@@ -40,4 +40,7 @@ Using Neon.tech as a serverless PostgreSQL database, we’ll use Prisma to visua
       ```bash
       npx prisma format
       ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> fcdfe90ca04e490998b25017c241a718694fa9b4
